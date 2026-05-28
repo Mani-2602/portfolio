@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mani Sankar Reddy Portfolio</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  background:#0d1117;
+  color:white;
+  overflow:hidden;
+}
+
+/* MAIN LAYOUT */
+
+.container{
+  display:flex;
+  height:100vh;
+}
+
+/* LEFT SIDE */
+
+.left{
+  width:40%;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:40px;
+  border-right:1px solid #222;
+  background:linear-gradient(to bottom,#1f2937,#0d1117);
+}
+
+.left img{
+  width:190px;
+  height:190px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid #58a6ff;
+  margin-bottom:20px;
+  box-shadow:0 0 20px rgba(88,166,255,.5);
+}
+
+.left h1{
+  font-size:52px;
+  line-height:1;
+}
+
+.left span{
+  color:#58a6ff;
+}
+
+.left p{
+  margin:20px 0;
+  color:#c9d1d9;
+  line-height:1.7;
+}
+
+/* BUTTONS */
+
+.buttons{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:15px;
+  margin-top:30px;
+}
+
+button{
+  padding:14px 24px;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  font-weight:bold;
+  transition:.3s;
+}
+
+.primary{
+  background:#58a6ff;
+  color:#0d1117;
+}
+
+.outline{
+  background:transparent;
+  border:2px solid #58a6ff;
+  color:#58a6ff;
+}
+
+button:hover{
+  transform:scale(1.05);
+}
+
+/* RIGHT SIDE */
+
+.right{
+  width:60%;
+  height:100vh;
+  position:relative;
+  overflow:hidden;
+  padding:40px;
+}
+
+/* SECTIONS */
+
+.section{
+  position:absolute;
+  top:40px;
+  left:100%;
+  width:90%;
+  opacity:0;
+  transition:all .6s ease;
+}
+
+.section.active{
+  left:40px;
+  opacity:1;
+}
+
+/* CARD */
+
+.card{
+  background:#161b22;
+  padding:35px;
+  border-radius:20px;
+  border:1px solid #30363d;
+}
+
+.card h2{
+  color:#58a6ff;
+  margin-bottom:20px;
+}
+
+.card p{
+  color:#c9d1d9;
+  line-height:1.8;
+}
+
+/* GRID */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.box{
+  background:#0d1117;
+  padding:20px;
+  border-radius:15px;
+  border:1px solid #30363d;
+  transition:.3s;
+}
+
+.box:hover{
+  transform:translateY(-5px);
+  border-color:#58a6ff;
+}
+
+.box h3{
+  color:#58a6ff;
+  margin-bottom:10px;
+}
+
+a{
+  color:#58a6ff;
+  text-decoration:none;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  body{
+    overflow:auto;
+  }
+
+  .container{
+    flex-direction:column;
+    height:auto;
+  }
+
+  .left,
+  .right{
+    width:100%;
+    height:auto;
+  }
+
+  .right{
+    min-height:600px;
+  }
+
+  .section{
+    width:100%;
+  }
+
+  .section.active{
+    left:0;
+  }
+
+  .left h1{
+    font-size:38px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- LEFT SIDE -->
+
+  <div class="left">
+
+    <div>
+
+      <!-- Add your image -->
+      <img src="c:\Users\manir\Downloads\myphoto.jpeg" alt="Profile">
+
+      <h1>
+        M MANI <br>
+        <span>SANKAR REDDY</span>
+      </h1>
+
+      <p>
+        Frontend Developer • Java Programmer • Vibe Coder
+      </p>
+
+      <p>Seeking an opportunity to contribute my communication, digital engagement, and technical skills in a dynamic organization where I can learn, grow, and support impactful initiatives.</p>
+
+      <!-- BUTTONS -->
+
+      <div class="buttons">
+
+        <button class="primary" onclick="showSection('about')">
+          About
+        </button>
+
+        <button class="outline" onclick="showSection('skills')">
+          Skills
+        </button>
+
+        <button class="primary" onclick="showSection('projects')">
+          Projects
+        </button>
+
+        <button class="outline" onclick="showSection('education')">
+          Education
+        </button>
+
+        <button class="primary" onclick="showSection('contact')">
+          Contact
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- RIGHT SIDE -->
+
+  <div class="right">
+
+    <!-- DEFAULT WELCOME -->
+
+    <div id="welcome" class="section active">
+
+      <div class="card">
+
+        <h2>Hello 👋</h2>
+
+        <p>
+          Welcome to my portfolio website.
+          <br><br>
+
+          I am <b>Mani Sankar Reddy</b>, a passionate BTech CSE student
+          interested in Frontend Development, Java Programming,
+          Automation Tools and Digital Marketing.
+          <br><br>
+
+          Use the buttons on the left side to explore my skills,
+          projects, education and contact details.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- ABOUT -->
+
+    <div id="about" class="section">
+
+      <div class="card">
+
+        <h2>About Me👨🏻‍💻</h2>
+
+        <p>
+          Motivated and enthusiastic BTech Computer Science student at VVITU with strong communication skills and interest in Backend Developer, social media engagement, and technology. Experienced in networking with students, managing online engagement, and learning modern tools such as n8n workflow automation, website development using Replit AI tools, Java programming, and frontend technologies. Passionate about learning, teamwork, and contributing to community-driven initiatives..
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- SKILLS -->
+
+    <div id="skills" class="section">
+
+      <div class="card">
+
+        <h2>Skills☄️</h2>
+
+        <div class="grid">
+
+          <div class="box">Frontend Development</div>
+
+          <div class="box">Java Programming</div>
+
+          <div class="box">n8n Automation</div>
+
+          <div class="box">UI Designing</div>
+
+          <div class="box">Communication Skills</div>
+
+          <div class="box">MS Office & Excel</div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- PROJECTS -->
+
+    <div id="projects" class="section">
+
+      <div class="card">
+
+        <h2>Projects🚀</h2>
+
+        <div class="grid">
+
+          <div class="box">
+
+            <h3>Eco-Friendly Ecommerce Website</h3>
+
+            <p>
+              Built an ecommerce platform focused on reducing plastic usage
+              by selling eco-friendly and sustainable products only.
+            </p>
+
+          </div>
+
+          <div class="box">
+
+            <h3>Portfolio Website</h3>
+
+            <p>
+              Developed a responsive personal portfolio website using HTML and CSS.
+            </p>
+
+          </div>
+
+          <div class="box">
+
+            <h3>Automation Workflow Project</h3>
+
+            <p>
+              Created workflow automation systems using n8n tools.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- EDUCATION -->
+
+    <div id="education" class="section">
+
+      <div class="card">
+
+        <h2>Education🎓</h2>
+
+        <p><b>Pursuing BTech Computer Science Engineeering <b> 5th Semester</b></b> - VVITU </p>
+
+        <br>
+
+        <p>
+          Intermediate MPC - Sri Chaitanya Junior College (93.2%)
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- CONTACT -->
+
+    <div id="contact" class="section">
+
+      <div class="card">
+
+        <h2>Contact☎️</h2>
+
+        <p>📱 +91 9963152923</p>
+
+        <br>
+
+        <p>
+          🔗
+          <a href="https://www.linkedin.com/in/mani-sankar-reddy-57210b34a" target="_blank">
+            LinkedIn
+          </a>
+        </p>
+
+        <br>
+
+        <p>
+          💻
+          <a href="https://github.com/Mani-2602" target="_blank">
+            GitHub
+          </a>
+        </p>
+        <br>
+        <p>  📧Mail: manidevelop02@gmail.com</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+
+function showSection(id){
+
+  let sections=document.querySelectorAll(".section");
+
+  sections.forEach(section=>{
+    section.classList.remove("active");
+  });
+
+  document.getElementById(id).classList.add("active");
+}
+
+</script>
+
+</body>
+</html>
